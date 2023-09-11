@@ -1,0 +1,450 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* FUENTE: LA DE CIBELES (NOME NO HO, YE LA POPPINS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
+
+/* HEADER */
+header {
+  background: rgb(20, 4, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 4, 36, 1) 0%,
+    rgba(14, 0, 30, 0.6895133053221288) 50%,
+    rgba(45, 97, 182, 0) 100%
+  );
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+.container_navbar {
+  width: 85%;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: auto;
+  color: #fff;
+  
+  z-index: 50; /* Colocar el menú hamburguesa sobre el menú móvil */
+}
+
+.logo img {
+  width: 100px;
+  cursor: pointer;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+nav ul li a::after {
+  content: '';
+  height: 3px;
+  width: 0%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover:after {
+  width: 100%;
+}
+
+
+/* MENÚ HAMBURGUESA */
+
+.menu-hamburguesa {
+  top: 50%;
+  padding-right: 5%;
+  transform: translateY(-0%);
+  z-index: 5; /* Colocar el menú hamburguesa sobre el menú móvil */
+
+  display: none;
+}
+
+.menu-hamburguesa .btn {
+  width: 30px;
+  cursor: pointer;
+}
+
+span {
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  height: 4px;
+  background: #fff;
+  transition: all .3s;
+  position: relative;
+}
+
+span + span {
+  margin-top: 7px;
+}
+
+.active span:nth-child(1) {
+  animation: ease .7s top forwards;
+}
+
+.not-active span:nth-child(1) {
+  animation: ease .7s top-2 forwards;
+}
+
+.active span:nth-child(2) {
+  animation: ease .7s scaled forwards;
+}
+
+.not-active span:nth-child(2) {
+  animation: ease .7s scaled-2 forwards;
+}
+
+.active span:nth-child(3) {
+  animation: ease .7s bottom forwards;
+}
+
+.not-active span:nth-child(3) {
+  animation: ease .7s bottom-2 forwards;
+}
+
+@keyframes top {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+  50% {
+    top: 11px;
+    transform: rotate(0);
+  }
+  100% {
+    top: 11px;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes top-2 {
+  0% {
+    top: 11px;
+    transform: rotate(45deg);
+  }
+  50% {
+    top: 11px;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bottom {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+  50% {
+    bottom: 11px;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 11px;
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes bottom-2 {
+  0% {
+    bottom: 11px;
+    transform: rotate(135deg);
+  }
+  50% {
+    bottom: 11px;
+    transform: rotate(0);
+  }
+  100% {
+    bottom: 0;
+    transform: rotate(0);
+  }
+}
+
+@keyframes scaled {
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes scaled-2 {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* BODY */
+main {
+  padding-top: 150px;
+}
+
+body {
+  background-color: #0e001e;
+  scroll-behavior: smooth;
+}
+
+.container_main {
+  color: #fff;
+  display: flex;
+  position: relative;
+}
+
+.text_main {
+  padding: 9% 9% 0% 9%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 80px;
+  margin: 0;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.text_main p {
+  font-weight: 300;
+}
+
+.img_main {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: auto;
+  opacity: 50%;
+  z-index: -1;
+}
+
+/* ICONOS */
+.bx {
+  font-size: 60px;
+  margin-bottom: 8%;
+  transition: 0.3s;
+}
+
+.container_iconos {
+  color: #fff;
+  margin-top: 5%;
+  margin-bottom: 50%;
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.container_iconos h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.container_iconos p {
+  font-family: 'Poppins', sans-serif;
+}
+
+.icono1,
+.icono2,
+.icono3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 3% 5% 3%;
+}
+
+.icono1 i,
+.icono3 i {
+  transition: transform 0.3s ease;
+}
+
+.icono2 i {
+  transition: transform 0.3s ease;
+}
+
+.icono1 i:hover,
+.icono3 i:hover {
+  transform: rotate(10deg);
+}
+
+.icono2 i:hover {
+  transform: rotate(-10deg);
+}
+
+
+/* INFO MAIN */
+
+.info_main{
+  color: #fff;
+  display: flex;
+  
+  padding: 5% 15% 5% 15%;
+}
+
+.info1 .info2{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.info_main p{
+  margin: 5%;
+}
+
+/* FOOTER */
+
+footer {
+  color: #fff;
+  background-color: #0e001e;
+  padding: 35px;
+  padding-bottom: 3%;
+  position: relative;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+  /* Mostrar el menú hamburguesa */
+  .menu-hamburguesa {
+    display: block;
+  }
+
+  /* Mostrar los enlaces de navegación por defecto */
+  .nav-menu.show-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Cambiar a posición fija para ocupar toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ocupar toda la pantalla */
+    z-index: 3; /* Colocar el menú sobre todos los elementos */
+  }
+
+  .nav-menu.show-menu {
+    transition: background-color 0.5s; /* Duración de la transición */
+  }
+
+  /* Ocultar los enlaces de navegación por defecto */
+  .nav-menu {
+    display: none;
+    flex-direction: column; /* Muestra los enlaces en vertical */
+    align-items: center; /* Centra los enlaces verticalmente */
+    position: absolute;
+    top: 100%; /* Coloca el menú debajo del botón hamburguesa */
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Coloca el menú sobre el contenido */
+    }
+
+  /* Ajustar estilos para los enlaces del menú */
+  .nav-menu li {
+    margin: 10px 0;
+    padding-top: 5%;
+  }
+
+  /* Añadir transición de opacidad a los enlaces del menú */
+  .nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    opacity: 1; /* Inicialmente establecer opacidad en 0 */
+    transition: opacity 1s; /* Agregar transición de opacidad de 1 segundo */
+  }
+
+  /* Ajustar la opacidad de los enlaces cuando el menú se muestra */
+  .nav-menu.show-menu li a {
+    opacity: 0; /* Cuando se muestra el menú, establecer la opacidad en 1 */
+  }
+  
+  /* Estilos para el botón de la hamburguesa */
+  .btn {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* Mostrar el menú al hacer clic en el botón */
+  .btn.active + .nav-menu {
+    display: flex;
+  }
+
+  /* Ajustar H1 */
+  h1 {
+    font-size: 12vw;
+  }
+
+  /* Ajustar estilos para el contenedor de iconos en dispositivos móviles */
+  .container_iconos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30%;
+    margin-bottom: 5vw;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .icono1,
+  .icono2,
+  .icono3 {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .bx {
+    font-size: 50px;
+  }
+
+}
